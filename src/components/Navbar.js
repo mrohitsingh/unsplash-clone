@@ -12,6 +12,9 @@ function Navbar() {
     setImageSearchQuery(e.target.value);
   }
 
+  const coverImage =
+    "https://images.unsplash.com/photo-1642616761188-999cda84e89a";
+
   return (
     <div>
       <nav>
@@ -32,24 +35,19 @@ function Navbar() {
           <ul className="Link-Element">
             <li className="listElement">
               <a href="" className="anchorDiv">
-                Home
+                Advertise
               </a>
             </li>
             <li className="listElement">
               <a href="" className="anchorDiv">
-                Collections
+                Blog
               </a>
             </li>
-            <li className="listElement">
-              <a href="" className="anchorDiv">
-                Explore
-              </a>
-            </li>
-            <li className="">
+            {/* <li className="">
               <a href="" className="anchorDiv">
                 <i className="fas fa-ellipsis-h" />
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className="navElements">
@@ -66,6 +64,63 @@ function Navbar() {
           </div>
         </div>
       </nav>
+
+      <div className="cover-photo">
+        <img src={coverImage} alt="Cover" className="random" />
+        <div className="cover-content">
+          <div className="cover-heading">
+            <div className="title">Unsplash</div>
+            <div className="textColor">Beautiful, free photos.</div>
+            <div className="textMargin">
+              Gifted by the world’s most generous community of photographers. 🎁
+            </div>
+          </div>
+          <div className="cover-search">
+            <button className="searchCoverButton">
+              <Link to={`/images/${imageSearchQuery}`} id="btn">
+                <FaSearch type="submit" className="searchButton" />
+              </Link>
+            </button>
+            <input
+              className="coverSearchBox"
+              type="text"
+              onChange={searchPhoto}
+              placeholder="Search free high-resolution photos"
+            />
+          </div>
+
+          <div className="trending-search">
+            <span className="textColor">Trending searches: </span>
+            <span className="trendingText">business, </span>
+            <span className="trendingText">computer, </span>
+            <span className="trendingText">nature, </span>
+            <span className="trendingText">love, </span>
+            <span className="trendingText">house </span>
+          </div>
+        </div>
+        <div className="footer-div">
+          <div className="left-div">
+            <span className="highlightText">Photo of the day by</span>{" "}
+            <a className="linkDecoration" href="/@spenas88">
+              Gabriel
+            </a>
+          </div>
+          <div className="center-div">
+            <span className="highlightText">Read more about the </span>
+            <span>
+              <a
+                className="linkDecoration"
+                href="https://unsplash.com/license"
+                target="blank"
+              >
+                {" "}
+                Unsplash License
+              </a>
+            </span>
+          </div>
+          <div className="hideDiv">Extream Right Div No Content Displayed</div>
+        </div>
+      </div>
     </div>
   );
 }
