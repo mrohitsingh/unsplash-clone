@@ -36,7 +36,12 @@ function Home() {
     }
   }
 
-  const open = url => window.open(url, "_blank", "toolbar=no,scrollbars=yes,resizable=yes,top=300,left=400,width=700,height=800")
+  const open = (url) =>
+    window.open(
+      url,
+      "_blank",
+      "toolbar=no,scrollbars=yes,resizable=yes,top=300,left=400,width=700,height=800"
+    );
 
   useEffect(() => {
     window.addEventListener("resize", (e) => {
@@ -103,7 +108,6 @@ function Home() {
 
   return (
     <div>
-      <h1>Home</h1>
       <div className="imgContainer">
         {colWithImages.map((column, index) => (
           <div key={index}>
