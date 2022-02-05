@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaUnsplash, FaSearch } from "react-icons/fa";
 import { SiGooglelens } from "react-icons/si";
-import "../styles/SearchBox/SearchBox.css";
+import "./SearchBox.css";
 
 function Navbar() {
   const [imageSearchQuery, setImageSearchQuery] = useState("");
@@ -17,7 +17,7 @@ function Navbar() {
 
   return (
     <div>
-      <nav>
+      {/* <nav>
         <Link to="/">
           <FaUnsplash className="logo-image" />
         </Link>
@@ -42,12 +42,11 @@ function Navbar() {
               <a href="" className="anchorDiv">
                 Blog
               </a>
-            </li>
-            {/* <li className="">
+            </li><li className="">
               <a href="" className="anchorDiv">
                 <i className="fas fa-ellipsis-h" />
               </a>
-            </li> */}
+            </li>
           </ul>
         </div>
         <div className="navElements">
@@ -61,6 +60,66 @@ function Navbar() {
           </div>
           <div className="avatar">
             <img src="{AvatarImg}" className="avatarImg" alt="" />
+          </div>
+        </div>
+      </nav> */}
+
+      <nav className="navbar navbar-expand-lg navbar-light">
+        <div className="container-fluid">
+          <Link to="/">
+            <FaUnsplash className="logo-image" />
+          </Link>
+          <form>
+            <Link to={`/images/${imageSearchQuery}`} id="btn">
+              <FaSearch type="submit" className="searchButton" />
+            </Link>
+            <input
+              type="text"
+              onChange={searchPhoto}
+              placeholder="Search free high-resolution photos"
+            />
+          </form>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
+          <div
+            className="clickable-element collapse navbar-collapse"
+            id="navbarNavDropdown"
+          >
+            <ul className="Link-Element navbar-nav d-flex align-items-end">
+              <li className="listElement">
+                <a className="nav-link anchorDiv" aria-current="page" href="#">
+                  Advertise
+                </a>
+              </li>
+              <li className="listElement">
+                <a className="nav-link anchorDiv" href="#">
+                  Blog
+                </a>
+              </li>
+            </ul>
+            <div className="navElements d-flex justify-content-end">
+              <div className="submitPhoto">
+                <button className="submitButton">Submit a photo</button>
+              </div>
+              <div className="bell">
+                <a href="#" className="bellIcon">
+                  <i className="fas fa-bell fa-1x" />
+                </a>
+              </div>
+              <div className="avatar">
+                <img src="{AvatarImg}" className="avatarImg" alt="" />
+              </div>
+            </div>
           </div>
         </div>
       </nav>
@@ -101,8 +160,8 @@ function Navbar() {
         <div className="footer-div">
           <div className="left-div">
             <span className="highlightText">Photo of the day by</span>{" "}
-            <a className="linkDecoration" href="/@spenas88">
-              Gabriel
+            <a className="linkDecoration" href="/@larabaeri">
+              Lara Baeriswyl
             </a>
           </div>
           <div className="center-div">

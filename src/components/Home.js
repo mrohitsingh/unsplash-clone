@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { baseURL, h as header } from "../services/tokens";
+import { h as header, baseURL } from "../token";
 
 let timeout;
 
@@ -16,7 +16,6 @@ function Home() {
       arr.push([]);
     }
 
-    // [0,3,6,9,12],[1,4,7,10],[2,5,8,11]
     for (let i = 0; i < images.length; i++) {
       arr[i % arr.length].push(images[i]);
     }
@@ -79,9 +78,6 @@ function Home() {
           document.documentElement.scrollHeight - window.innerHeight / 2 &&
         !dataLoading.current
       ) {
-        console.log(page.current);
-        console.log("called loadData");
-
         if (timeout) {
           clearTimeout(timeout);
           timeout = null;
@@ -90,20 +86,15 @@ function Home() {
         timeout = setTimeout(() => {
           page.current += 1;
           loadData();
-          console.log(dataLoading.current);
-          console.log("calling uri", page.current);
         }, 100);
       }
     };
     window.addEventListener("scroll", listener);
-    console.log("once");
     return () => {
       window.removeEventListener("scroll", listener);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // derived state
   const colWithImages = getImagesWithColumns();
 
   return (
@@ -113,6 +104,7 @@ function Home() {
           <div key={index}>
             {column.map((imgs) => (
               <div
+                className="content"
                 key={imgs.id}
                 onClick={() => open(imgs.links.html)}
                 style={{

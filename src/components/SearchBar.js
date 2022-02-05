@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../unsplash.png";
-import "../styles/SearchBox/SearchBox.css";
+import "./SearchBox.css";
 
 function Navbar() {
   const [imageSearchQuery, setImageSearchQuery] = useState("");

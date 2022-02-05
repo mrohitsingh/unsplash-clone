@@ -1,54 +1,53 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 :root {
-  --colums: 3;
+    --colums: 3;
 }
 
 body {
-  font-family: "Montserrat";
-  background-color: #030607;
-  color: white;
+    font-family: "Montserrat";
+    background-color: #fff;
+    color: #000;
 }
 
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .imgContainer {
-  display: grid;
-  grid-template-columns: repeat(var(--colums), 1fr);
-  column-gap: 16px;
-  width: 100%;
+    display: grid;
+    grid-template-columns: repeat(var(--colums), 1fr);
+    column-gap: 16px;
+    width: 100%;
 }
 
 .imgContainer .content {
-  cursor: pointer;
-  width: 100%;
-  position: relative;
-  margin-bottom: 16px;
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+    margin-bottom: 16px;
 }
 
 img {
-  width: 100%;
+    width: 100%;
 }
 
 @media (max-width: 1200px) {
-  :root {
-    --colums: 3;
-  }
+     :root {
+        --colums: 3;
+    }
 }
 
 @media (max-width: 768px) {
-  :root {
-    --colums: 2;
-  }
+     :root {
+        --colums: 2;
+    }
 }
 
 @media (max-width: 480px) {
-  :root {
-    --colums: 1;
-  }
+     :root {
+        --colums: 1;
+    }
 }
-/*# sourceMappingURL=Home.css.map */
