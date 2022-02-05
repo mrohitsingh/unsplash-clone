@@ -132,6 +132,11 @@ nav #btn:hover {
     outline: none;
 }
 
+.clickable-element {
+    cursor: pointer;
+    font-size: 15px;
+}
+
 .hideDiv {
     visibility: hidden;
 }
@@ -242,6 +247,9 @@ nav #btn:hover {
     nav {
         padding: 10px 10px;
     }
+    nav a {
+        font-size: 0.8rem;
+    }
     .logo-image {
         width: 6vw;
         height: 7vh;
@@ -258,18 +266,16 @@ nav #btn:hover {
     nav form button {
         padding: 4px;
     }
-}
-
-@media (max-width: 375px) {
-    nav {
-        padding: 10px 10px;
+    .random {
+        height: 62vh;
     }
-    nav form input {
-        width: auto;
-        height: max-content;
-        font-size: 10px;
+    .cover-content {
+        top: 12%;
+        right: 2%;
+        left: 2%;
+        font-size: 12px;
     }
-    nav form button {
-        padding: 4px;
+    .textMargin {
+        font-size: 13px;
     }
 }
