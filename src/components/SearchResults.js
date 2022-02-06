@@ -90,7 +90,6 @@ function SearchResults() {
         }
       };
       window.addEventListener("scroll", listener);
-      console.log("once");
       return () => {
         window.removeEventListener("scroll", listener);
       };
